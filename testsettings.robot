@@ -3,6 +3,7 @@
 Documentation    This file will store the configurations.
 
 Library  Selenium2Library
+Library  DateTime
 
 #Import
 Resource  testvariables.robot

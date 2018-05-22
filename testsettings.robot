@@ -4,6 +4,7 @@ Documentation    This file will store the configurations.
 
 Library  Selenium2Library
 Library  DateTime
+Library  AppiumLibrary
 
 #Import
 Resource  testvariables.robot

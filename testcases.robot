@@ -22,7 +22,7 @@ Test Login To Circles Life
   Access To My Account
   My Account Landing
   Verify Registered Email Displayed In My Account
-  Capture Page Screenshot
+  Selenium2Library.Capture Page Screenshot
 
 Test Login To Facebook And Post Comment
   [tags]  two
@@ -35,4 +35,4 @@ Test Login To Facebook And Post Comment
   Profile Timeline Landing
   Post A Comment On Own Profile  My Comment for ${currentDate}
   Validate Successfully Post A Comment  My Comment for ${currentDate}
-  Capture Page Screenshot
+  Selenium2Library.Capture Page Screenshot

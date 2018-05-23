@@ -1,0 +1,1119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180523 16:06:16.833" generator="Robot 3.0.4 (Python 2.7.15 on win32)">
+<suite source="C:\Users\Farith\Desktop\circles.life\testcases" id="s1" name="Testcases">
+<suite source="C:\Users\Farith\Desktop\circles.life\testcases\testcases-desktop.robot" id="s1-s1" name="Testcases-Desktop">
+<test id="s1-s1-t1" name="Test Login To Circles Life">
+<kw type="setup" name="TestCase Setup" library="testsettings">
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${delay}</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:17.261" starttime="20180523 16:06:17.261"></status>
+</kw>
+<kw name="Setup Chrome Browser" library="testsettings">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${headless}"=="Yes"</arg>
+<arg>Set Variable</arg>
+<arg>--headless</arg>
+</arguments>
+<assign>
+<var>${headlessValue}</var>
+</assign>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>--headless</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:17.263" starttime="20180523 16:06:17.263"></status>
+</kw>
+<msg timestamp="20180523 16:06:17.263" level="INFO">${headlessValue} = --headless</msg>
+<status status="PASS" endtime="20180523 16:06:17.263" starttime="20180523 16:06:17.261"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+</arguments>
+<assign>
+<var>${options}</var>
+</assign>
+<msg timestamp="20180523 16:06:17.263" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000000004854F98&gt;</msg>
+<status status="PASS" endtime="20180523 16:06:17.263" starttime="20180523 16:06:17.263"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>disable-infobars</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:17.264" starttime="20180523 16:06:17.263"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${headlessValue}"=="--headless"</arg>
+<arg>Call Method</arg>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>${headlessValue}</arg>
+</arguments>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>${headlessValue}</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:17.264" starttime="20180523 16:06:17.264"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:06:17.264" starttime="20180523 16:06:17.264"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:17.265" starttime="20180523 16:06:17.265"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:17.265" starttime="20180523 16:06:17.265"></status>
+</kw>
+<kw name="Create Webdriver" library="Selenium2Library">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>chrome_options=${options}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:17.265" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" endtime="20180523 16:06:21.626" starttime="20180523 16:06:17.265"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:06:21.626" starttime="20180523 16:06:17.261"></status>
+</kw>
+<kw name="Set Window Size" library="Selenium2Library">
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<arguments>
+<arg>1366</arg>
+<arg>720</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:22.731" starttime="20180523 16:06:21.626"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:06:22.731" starttime="20180523 16:06:17.261"></status>
+</kw>
+<kw name="Access To Cycles Life Main Page" library="testkeywords">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${main_url}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:22.732" level="INFO">Opening url 'https://pages.circles.life/'</msg>
+<status status="PASS" endtime="20180523 16:06:26.645" starttime="20180523 16:06:22.732"></status>
+</kw>
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals ``title``.</doc>
+<arguments>
+<arg>${main_title}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:26.650" level="INFO">Page title is 'Circles.Life | Unlimit your telco. Now.'.</msg>
+<status status="PASS" endtime="20180523 16:06:26.651" starttime="20180523 16:06:26.646"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20180523 16:06:26.940" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180523 16:06:26.940" starttime="20180523 16:06:26.651"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:06:26.940" starttime="20180523 16:06:22.732"></status>
+</kw>
+<kw name="Access To Sign In/Create Account Page" library="testkeywords">
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${main_buy_now_button}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:26.941" level="INFO">Simulating Mouse Over on element '//nav[@id='site-navigation']//a[@href='https://shop.circles.life/login?reset=true' and text()='Buy now']'.</msg>
+<status status="PASS" endtime="20180523 16:06:26.968" starttime="20180523 16:06:26.941"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${main_buy_now_button}</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:26.987" starttime="20180523 16:06:26.968"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${main_buy_now_button}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:26.987" level="INFO">Clicking element '//nav[@id='site-navigation']//a[@href='https://shop.circles.life/login?reset=true' and text()='Buy now']'.</msg>
+<status status="PASS" endtime="20180523 16:06:27.044" starttime="20180523 16:06:26.987"></status>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` disappears from current page.</doc>
+<arguments>
+<arg>${main_buy_now_button}</arg>
+<arg>timeout=15</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:30.540" starttime="20180523 16:06:27.044"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:06:30.540" starttime="20180523 16:06:26.940"></status>
+</kw>
+<kw name="Sign In/Create Account Page Landing" library="testkeywords">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals ``title``.</doc>
+<arguments>
+<arg>${sign_in/create_acc_title}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:30.545" level="INFO">Page title is 'Unlimit your telco. Now.'.</msg>
+<status status="PASS" endtime="20180523 16:06:30.545" starttime="20180523 16:06:30.541"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${sign_in/create_acc_header}</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:30.569" starttime="20180523 16:06:30.545"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20180523 16:06:30.846" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180523 16:06:30.846" starttime="20180523 16:06:30.569"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:06:30.847" starttime="20180523 16:06:30.540"></status>
+</kw>
+<kw name="Sign In To Existing Account" library="testkeywords">
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${sign_in_email_text}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:30.848" level="INFO">Simulating Mouse Over on element '//form[@class='form-signin']//div[@class='hidden-small-device']//div[text()='Email address']'.</msg>
+<status status="PASS" endtime="20180523 16:06:30.873" starttime="20180523 16:06:30.847"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${sign_in_email_text}</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:30.892" starttime="20180523 16:06:30.873"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${sign_in_email_input}</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:30.917" starttime="20180523 16:06:30.892"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${sign_in_email_input}</arg>
+<arg>${test_mail}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:30.918" level="INFO">Typing text 'yeddy_test1@protonmail.com' into text field '//form[@class='form-signin']//input[@name='email']'.</msg>
+<status status="PASS" endtime="20180523 16:06:31.068" starttime="20180523 16:06:30.917"></status>
+</kw>
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${sign_in_pass_text}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:31.068" level="INFO">Simulating Mouse Over on element '//form[@class='form-signin']//div[@class='hidden-small-device']//div[text()='Password']'.</msg>
+<status status="PASS" endtime="20180523 16:06:31.098" starttime="20180523 16:06:31.068"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${sign_in_pass_text}</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:31.116" starttime="20180523 16:06:31.098"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${sign_in_pass_input}</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:31.140" starttime="20180523 16:06:31.116"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${sign_in_pass_input}</arg>
+<arg>${test_pass}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:31.140" level="INFO">Typing text 'df478444' into text field '//form[@class='form-signin']//input[@name='password']'.</msg>
+<status status="PASS" endtime="20180523 16:06:31.202" starttime="20180523 16:06:31.140"></status>
+</kw>
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${sign_in_button}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:31.203" level="INFO">Simulating Mouse Over on element '//button[text()='Sign In']'.</msg>
+<status status="PASS" endtime="20180523 16:06:31.231" starttime="20180523 16:06:31.203"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${sign_in_button}</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:31.249" starttime="20180523 16:06:31.232"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${sign_in_button}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:31.250" level="INFO">Clicking element '//button[text()='Sign In']'.</msg>
+<status status="PASS" endtime="20180523 16:06:31.301" starttime="20180523 16:06:31.250"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:06:31.301" starttime="20180523 16:06:30.847"></status>
+</kw>
+<kw name="Successful Signed In Landing" library="testkeywords">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals ``title``.</doc>
+<arguments>
+<arg>${signed_in_title}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:31.305" level="INFO">Page title is 'Unlimit your telco. Now.'.</msg>
+<status status="PASS" endtime="20180523 16:06:31.305" starttime="20180523 16:06:31.302"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${signed_in_header_h5}</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:32.147" starttime="20180523 16:06:31.305"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20180523 16:06:32.410" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180523 16:06:32.410" starttime="20180523 16:06:32.148"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:06:32.410" starttime="20180523 16:06:31.302"></status>
+</kw>
+<kw name="Access To My Account" library="testkeywords">
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${signed_in_menu_my_account}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:32.411" level="INFO">Simulating Mouse Over on element '//div[text()='MY ACCOUNT']'.</msg>
+<status status="PASS" endtime="20180523 16:06:32.437" starttime="20180523 16:06:32.411"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${signed_in_menu_my_account}</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:32.454" starttime="20180523 16:06:32.437"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${signed_in_menu_my_account}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:32.454" level="INFO">Clicking element '//div[text()='MY ACCOUNT']'.</msg>
+<status status="PASS" endtime="20180523 16:06:32.501" starttime="20180523 16:06:32.454"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:06:32.501" starttime="20180523 16:06:32.410"></status>
+</kw>
+<kw name="My Account Landing" library="testkeywords">
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${my_account_header}</arg>
+<arg>timeout=15</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:33.025" starttime="20180523 16:06:32.502"></status>
+</kw>
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals ``title``.</doc>
+<arguments>
+<arg>${my_account_title}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:33.028" level="INFO">Page title is 'Unlimit your telco. Now.'.</msg>
+<status status="PASS" endtime="20180523 16:06:33.028" starttime="20180523 16:06:33.025"></status>
+</kw>
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${my_account_header}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:33.029" level="INFO">Simulating Mouse Over on element '//div[@class='hidden-small-device']//h5//div[text()='My Account']'.</msg>
+<status status="PASS" endtime="20180523 16:06:33.048" starttime="20180523 16:06:33.029"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:06:33.048" starttime="20180523 16:06:32.501"></status>
+</kw>
+<kw name="Verify Registered Email Displayed In My Account" library="testkeywords">
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${my_account_email_text}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:33.049" level="INFO">Simulating Mouse Over on element '//label[text()='Email']'.</msg>
+<status status="PASS" endtime="20180523 16:06:33.074" starttime="20180523 16:06:33.049"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${my_account_email_text}</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:33.091" starttime="20180523 16:06:33.074"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>//input[@value='${test_mail}']</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:33.113" starttime="20180523 16:06:33.091"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20180523 16:06:33.343" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180523 16:06:33.343" starttime="20180523 16:06:33.113"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:06:33.343" starttime="20180523 16:06:33.049"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20180523 16:06:36.390" starttime="20180523 16:06:33.344"></status>
+</kw>
+<tags>
+<tag>one</tag>
+</tags>
+<status status="PASS" endtime="20180523 16:06:36.390" critical="yes" starttime="20180523 16:06:17.261"></status>
+</test>
+<test id="s1-s1-t2" name="Test Login To Facebook And Post Comment">
+<kw type="setup" name="TestCase Setup" library="testsettings">
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${delay}</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:36.394" starttime="20180523 16:06:36.394"></status>
+</kw>
+<kw name="Setup Chrome Browser" library="testsettings">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${headless}"=="Yes"</arg>
+<arg>Set Variable</arg>
+<arg>--headless</arg>
+</arguments>
+<assign>
+<var>${headlessValue}</var>
+</assign>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>--headless</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:36.395" starttime="20180523 16:06:36.395"></status>
+</kw>
+<msg timestamp="20180523 16:06:36.395" level="INFO">${headlessValue} = --headless</msg>
+<status status="PASS" endtime="20180523 16:06:36.395" starttime="20180523 16:06:36.395"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+</arguments>
+<assign>
+<var>${options}</var>
+</assign>
+<msg timestamp="20180523 16:06:36.396" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000000048ADE48&gt;</msg>
+<status status="PASS" endtime="20180523 16:06:36.396" starttime="20180523 16:06:36.396"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>disable-infobars</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:36.396" starttime="20180523 16:06:36.396"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${headlessValue}"=="--headless"</arg>
+<arg>Call Method</arg>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>${headlessValue}</arg>
+</arguments>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>${headlessValue}</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:36.397" starttime="20180523 16:06:36.397"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:06:36.397" starttime="20180523 16:06:36.396"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:36.397" starttime="20180523 16:06:36.397"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:36.397" starttime="20180523 16:06:36.397"></status>
+</kw>
+<kw name="Create Webdriver" library="Selenium2Library">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>chrome_options=${options}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:36.398" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" endtime="20180523 16:06:40.763" starttime="20180523 16:06:36.397"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:06:40.763" starttime="20180523 16:06:36.394"></status>
+</kw>
+<kw name="Set Window Size" library="Selenium2Library">
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<arguments>
+<arg>1366</arg>
+<arg>720</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:41.867" starttime="20180523 16:06:40.763"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:06:41.868" starttime="20180523 16:06:36.394"></status>
+</kw>
+<kw name="Access To Facebook Login Page" library="testkeywords">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${fb_main_url}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:41.869" level="INFO">Opening url 'https://en-gb.facebook.com/'</msg>
+<status status="PASS" endtime="20180523 16:06:42.852" starttime="20180523 16:06:41.868"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${fb_main_header}</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:42.876" starttime="20180523 16:06:42.852"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:06:42.876" starttime="20180523 16:06:41.868"></status>
+</kw>
+<kw name="Fill In Email And Password To Login" library="testkeywords">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${fb_main_email_input}</arg>
+<arg>${test_mail}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:42.877" level="INFO">Typing text 'yeddy_test1@protonmail.com' into text field '//form[@id='login_form']//input[@type='email']'.</msg>
+<status status="PASS" endtime="20180523 16:06:43.015" starttime="20180523 16:06:42.877"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${fb_main_password_input}</arg>
+<arg>${test_pass}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:43.016" level="INFO">Typing text 'df478444' into text field '//form[@id='login_form']//input[@type='password']'.</msg>
+<status status="PASS" endtime="20180523 16:06:43.088" starttime="20180523 16:06:43.015"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${fb_main_login_button}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:43.088" level="INFO">Clicking element '//form[@id='login_form']//input[@value='Log In']'.</msg>
+<status status="PASS" endtime="20180523 16:06:44.896" starttime="20180523 16:06:43.088"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:06:44.896" starttime="20180523 16:06:42.877"></status>
+</kw>
+<kw name="Facebook Home Landing" library="testkeywords">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${fb_home_header}</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:44.929" starttime="20180523 16:06:44.897"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${fb_home_search_input}</arg>
+<arg>timeout=15</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:45.410" starttime="20180523 16:06:44.929"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:06:45.410" starttime="20180523 16:06:44.897"></status>
+</kw>
+<kw name="Access To Profile Timeline" library="testkeywords">
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${fb_home_left_nav_profile}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:45.411" level="INFO">Simulating Mouse Over on element '//div[@id='userNav']//div[@class='linkWrap noCount']'.</msg>
+<status status="PASS" endtime="20180523 16:06:45.440" starttime="20180523 16:06:45.411"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${fb_home_left_nav_profile}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:45.441" level="INFO">Clicking element '//div[@id='userNav']//div[@class='linkWrap noCount']'.</msg>
+<status status="PASS" endtime="20180523 16:06:45.511" starttime="20180523 16:06:45.440"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:06:45.511" starttime="20180523 16:06:45.411"></status>
+</kw>
+<kw name="Profile Timeline Landing" library="testkeywords">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${fb_timeline_cover_image}</arg>
+<arg>timeout=10</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:46.027" starttime="20180523 16:06:45.511"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${fb_timeline_top_nav_timeline}</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:46.052" starttime="20180523 16:06:46.027"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:06:46.052" starttime="20180523 16:06:45.511"></status>
+</kw>
+<kw name="Post A Comment On Own Profile" library="testkeywords">
+<arguments>
+<arg>${fb_text_comment}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${fb_timeline_make_a_post}</arg>
+<arg>timeout=30</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:46.737" starttime="20180523 16:06:46.053"></status>
+</kw>
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${fb_timeline_make_a_post}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:46.738" level="INFO">Simulating Mouse Over on element '//a[@label='Make Post']//span[text()='Make Post']'.</msg>
+<status status="PASS" endtime="20180523 16:06:46.779" starttime="20180523 16:06:46.737"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${fb_timeline_make_a_post}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:46.780" level="INFO">Clicking element '//a[@label='Make Post']//span[text()='Make Post']'.</msg>
+<status status="PASS" endtime="20180523 16:06:46.940" starttime="20180523 16:06:46.779"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${fb_timeline_post_comment_container}</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:47.263" starttime="20180523 16:06:46.940"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${fb_timeline_post_comment_container_input}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:47.263" level="INFO">Clicking element '//div[@id='timeline_composer_container']//div[@data-testid='status-attachment-mentions-input']'.</msg>
+<status status="PASS" endtime="20180523 16:06:47.483" starttime="20180523 16:06:47.263"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${fb_timeline_post_comment_container_input}</arg>
+<arg>${comment}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:47.484" level="INFO">Typing text 'This is my special comment to Circles Life.' into text field '//div[@id='timeline_composer_container']//div[@data-testid='status-attachment-mentions-input']'.</msg>
+<status status="PASS" endtime="20180523 16:06:49.121" starttime="20180523 16:06:47.483"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20180523 16:06:50.122" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20180523 16:06:50.122" starttime="20180523 16:06:49.121"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${fb_timeline_post_comment_container_post_button}</arg>
+</arguments>
+<msg timestamp="20180523 16:06:50.122" level="INFO">Clicking element '//div[@id='timeline_composer_container']//button//span[text()='Post']'.</msg>
+<status status="PASS" endtime="20180523 16:06:50.203" starttime="20180523 16:06:50.122"></status>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` disappears from current page.</doc>
+<arguments>
+<arg>${fb_timeline_post_comment_container_close}</arg>
+<arg>timeout=30</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:57.351" starttime="20180523 16:06:50.203"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:06:57.351" starttime="20180523 16:06:46.053"></status>
+</kw>
+<kw name="Validate Successfully Post A Comment" library="testkeywords">
+<arguments>
+<arg>${fb_text_comment}</arg>
+</arguments>
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>//div[@id='recent_capsule_container']//p[text()='${comment}']</arg>
+</arguments>
+<msg timestamp="20180523 16:06:57.352" level="INFO">Simulating Mouse Over on element '//div[@id='recent_capsule_container']//p[text()='This is my special comment to Circles Life.']'.</msg>
+<status status="PASS" endtime="20180523 16:06:57.382" starttime="20180523 16:06:57.352"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>//div[@id='recent_capsule_container']//p[text()='${comment}']</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:06:57.400" starttime="20180523 16:06:57.382"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:06:57.400" starttime="20180523 16:06:57.352"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20180523 16:06:57.661" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180523 16:06:57.662" starttime="20180523 16:06:57.401"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20180523 16:07:00.703" starttime="20180523 16:06:57.662"></status>
+</kw>
+<tags>
+<tag>two</tag>
+</tags>
+<status status="PASS" endtime="20180523 16:07:00.703" critical="yes" starttime="20180523 16:06:36.393"></status>
+</test>
+<doc>A test suite with various tests.</doc>
+<status status="PASS" endtime="20180523 16:07:00.706" starttime="20180523 16:06:16.871"></status>
+</suite>
+<suite source="C:\Users\Farith\Desktop\circles.life\testcases\testcases-mobile.robot" id="s1-s2" name="Testcases-Mobile">
+<test id="s1-s2-t1" name="Test Appium One">
+<kw name="Launch Facebook Application">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>platformName=Android</arg>
+<arg>platformVersion=5.1.1</arg>
+<arg>deviceName=QVGA_API_22</arg>
+<arg>app=com.facebook.katana</arg>
+<arg>appActivity=com.facebook.katana.LoginActivity</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:07:07.485" starttime="20180523 16:07:00.979"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:07:07.486" starttime="20180523 16:07:00.979"></status>
+</kw>
+<kw name="Facebook Login Landing">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.ImageView[@resource-id='com.facebook.katana:id/login_fb_logo']</arg>
+<arg>timeout=15</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:07:09.274" starttime="20180523 16:07:07.486"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.EditText[@resource-id='com.facebook.katana:id/login_username']</arg>
+<arg>timeout=60</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:07:11.499" starttime="20180523 16:07:09.274"></status>
+</kw>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<doc>Verifies that element identified with locator is visible.</doc>
+<arguments>
+<arg>//android.widget.EditText[@resource-id='com.facebook.katana:id/login_password']</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:07:11.615" starttime="20180523 16:07:11.499"></status>
+</kw>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<doc>Verifies that element identified with locator is visible.</doc>
+<arguments>
+<arg>//android.widget.Button[@resource-id='com.facebook.katana:id/login_login']</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:07:11.696" starttime="20180523 16:07:11.615"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180523 16:07:12.032" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180523 16:07:12.032" starttime="20180523 16:07:11.696"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:07:12.033" starttime="20180523 16:07:07.486"></status>
+</kw>
+<kw name="Fill Up Credential">
+<kw name="Clear Text" library="AppiumLibrary">
+<doc>Clears the text field identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.EditText[@resource-id='com.facebook.katana:id/login_username']</arg>
+</arguments>
+<msg timestamp="20180523 16:07:12.034" level="INFO">Clear text field '//android.widget.EditText[@resource-id='com.facebook.katana:id/login_username']'</msg>
+<status status="PASS" endtime="20180523 16:07:13.547" starttime="20180523 16:07:12.033"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.EditText[@resource-id='com.facebook.katana:id/login_username']</arg>
+</arguments>
+<msg timestamp="20180523 16:07:13.547" level="INFO">Clicking element '//android.widget.EditText[@resource-id='com.facebook.katana:id/login_username']'.</msg>
+<status status="PASS" endtime="20180523 16:07:16.925" starttime="20180523 16:07:13.547"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.EditText[@resource-id='com.facebook.katana:id/login_username']</arg>
+<arg>yeddy_test1@protonmail.com</arg>
+</arguments>
+<msg timestamp="20180523 16:07:16.925" level="INFO">Typing text 'yeddy_test1@protonmail.com' into text field '//android.widget.EditText[@resource-id='com.facebook.katana:id/login_username']'</msg>
+<status status="PASS" endtime="20180523 16:07:23.349" starttime="20180523 16:07:16.925"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.EditText[@resource-id='com.facebook.katana:id/login_password']</arg>
+</arguments>
+<msg timestamp="20180523 16:07:23.350" level="INFO">Clicking element '//android.widget.EditText[@resource-id='com.facebook.katana:id/login_password']'.</msg>
+<status status="PASS" endtime="20180523 16:07:24.030" starttime="20180523 16:07:23.349"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.EditText[@resource-id='com.facebook.katana:id/login_password']</arg>
+<arg>df478444</arg>
+</arguments>
+<msg timestamp="20180523 16:07:24.030" level="INFO">Typing text 'df478444' into text field '//android.widget.EditText[@resource-id='com.facebook.katana:id/login_password']'</msg>
+<status status="PASS" endtime="20180523 16:07:29.483" starttime="20180523 16:07:24.030"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180523 16:07:29.767" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-2.png"&gt;&lt;img src="appium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180523 16:07:29.767" starttime="20180523 16:07:29.483"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:07:29.767" starttime="20180523 16:07:12.033"></status>
+</kw>
+<kw name="Login To Facebook">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.Button[@resource-id='com.facebook.katana:id/login_login']</arg>
+</arguments>
+<msg timestamp="20180523 16:07:29.768" level="INFO">Clicking element '//android.widget.Button[@resource-id='com.facebook.katana:id/login_login']'.</msg>
+<status status="PASS" endtime="20180523 16:07:30.287" starttime="20180523 16:07:29.768"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.ImageView[@resource-id='com.facebook.katana:id/login_progress_fb_logo']</arg>
+<arg>timeout=15</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:07:30.890" starttime="20180523 16:07:30.288"></status>
+</kw>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<doc>Verifies that element identified with locator is visible.</doc>
+<arguments>
+<arg>//android.widget.ProgressBar[@resource-id='com.facebook.katana:id/login_progress']</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:07:30.974" starttime="20180523 16:07:30.890"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180523 16:07:31.335" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-3.png"&gt;&lt;img src="appium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180523 16:07:31.335" starttime="20180523 16:07:30.974"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:07:31.336" starttime="20180523 16:07:29.768"></status>
+</kw>
+<kw name="Login Confirmation Landing">
+<kw name="Wait Until Page Does Not Contain Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<arguments>
+<arg>//android.widget.ProgressBar[@resource-id='com.facebook.katana:id/login_progress']</arg>
+<arg>timeout=60</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:07:35.353" starttime="20180523 16:07:31.336"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.TextView[@resource-id='com.facebook.katana:id/title']</arg>
+<arg>timeout=15</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:07:35.822" starttime="20180523 16:07:35.353"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180523 16:07:36.206" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-4.png"&gt;&lt;img src="appium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180523 16:07:36.206" starttime="20180523 16:07:35.823"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:07:36.207" starttime="20180523 16:07:31.336"></status>
+</kw>
+<kw name="Handle Login Confirmation">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.TextView[@resource-id='com.facebook.katana:id/dbl_off']</arg>
+</arguments>
+<msg timestamp="20180523 16:07:36.208" level="INFO">Clicking element '//android.widget.TextView[@resource-id='com.facebook.katana:id/dbl_off']'.</msg>
+<status status="PASS" endtime="20180523 16:07:36.681" starttime="20180523 16:07:36.208"></status>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<arguments>
+<arg>//android.widget.TextView[@text='Not Now']</arg>
+<arg>timeout=15</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:07:37.618" starttime="20180523 16:07:36.682"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:07:37.618" starttime="20180523 16:07:36.207"></status>
+</kw>
+<kw name="Facebook Main Landing">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.EditText[@resource-id='com.facebook.katana:id/search_edit_text']</arg>
+<arg>timeout=15</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:07:40.331" starttime="20180523 16:07:37.619"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>//android.widget.TextView[@resource-id='com.facebook.katana:id/feed_composer_hint']</arg>
+<arg>timeout=15</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:07:40.391" starttime="20180523 16:07:40.331"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180523 16:07:40.732" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-5.png"&gt;&lt;img src="appium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180523 16:07:40.732" starttime="20180523 16:07:40.391"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:07:40.732" starttime="20180523 16:07:37.619"></status>
+</kw>
+<kw name="Access To Own Profile">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.ImageView[@resource-id='com.facebook.katana:id/feed_composer_profile_image']</arg>
+</arguments>
+<msg timestamp="20180523 16:07:40.733" level="INFO">Clicking element '//android.widget.ImageView[@resource-id='com.facebook.katana:id/feed_composer_profile_image']'.</msg>
+<status status="PASS" endtime="20180523 16:07:41.432" starttime="20180523 16:07:40.733"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.ImageView[@resource-id='com.facebook.katana:id/standard_header_profile_pic']</arg>
+<arg>timeout=15</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:07:43.561" starttime="20180523 16:07:41.432"></status>
+</kw>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<doc>Verifies that element identified with locator is visible.</doc>
+<arguments>
+<arg>//android.view.View[@resource-id='com.facebook.katana:id/standard_header_titles_container']</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:07:43.661" starttime="20180523 16:07:43.561"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20180523 16:07:48.662" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20180523 16:07:48.662" starttime="20180523 16:07:43.661"></status>
+</kw>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<doc>Verifies that element identified with locator is visible.</doc>
+<arguments>
+<arg>//android.widget.TextView[@text='Add featured photos']</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:07:48.767" starttime="20180523 16:07:48.662"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180523 16:07:49.109" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-6.png"&gt;&lt;img src="appium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180523 16:07:49.109" starttime="20180523 16:07:48.767"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:07:49.109" starttime="20180523 16:07:40.733"></status>
+</kw>
+<kw name="Validate Posted Comment">
+<kw type="for" name="${INDEX} IN RANGE [ 1 | 6 ]">
+<kw type="foritem" name="${INDEX} = 1">
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>100</arg>
+<arg>280</arg>
+<arg>100</arg>
+<arg>160</arg>
+<arg>1000</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:07:49.967" starttime="20180523 16:07:49.111"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20180523 16:07:50.967" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20180523 16:07:50.967" starttime="20180523 16:07:49.967"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180523 16:07:51.304" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-7.png"&gt;&lt;img src="appium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180523 16:07:51.304" starttime="20180523 16:07:50.967"></status>
+</kw>
+<kw name="Get Matching Xpath Count" library="AppiumLibrary">
+<doc>Returns number of elements matching ``xpath``</doc>
+<arguments>
+<arg>//android.view.View[@content-desc="${fb_text_comment}"]</arg>
+</arguments>
+<assign>
+<var>${count}</var>
+</assign>
+<msg timestamp="20180523 16:07:51.425" level="INFO">${count} = 0</msg>
+<status status="PASS" endtime="20180523 16:07:51.425" starttime="20180523 16:07:51.304"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${count}&gt;0</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:07:51.426" starttime="20180523 16:07:51.426"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:07:51.426" starttime="20180523 16:07:49.110"></status>
+</kw>
+<kw type="foritem" name="${INDEX} = 2">
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>100</arg>
+<arg>280</arg>
+<arg>100</arg>
+<arg>160</arg>
+<arg>1000</arg>
+</arguments>
+<status status="PASS" endtime="20180523 16:07:52.303" starttime="20180523 16:07:51.426"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20180523 16:07:53.303" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20180523 16:07:53.303" starttime="20180523 16:07:52.303"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180523 16:07:53.626" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-8.png"&gt;&lt;img src="appium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180523 16:07:53.626" starttime="20180523 16:07:53.303"></status>
+</kw>
+<kw name="Get Matching Xpath Count" library="AppiumLibrary">
+<doc>Returns number of elements matching ``xpath``</doc>
+<arguments>
+<arg>//android.view.View[@content-desc="${fb_text_comment}"]</arg>
+</arguments>
+<assign>
+<var>${count}</var>
+</assign>
+<msg timestamp="20180523 16:07:53.696" level="INFO">${count} = 1</msg>
+<status status="PASS" endtime="20180523 16:07:53.696" starttime="20180523 16:07:53.626"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${count}&gt;0</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20180523 16:07:53.697" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" endtime="20180523 16:07:53.697" starttime="20180523 16:07:53.697"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:07:53.697" starttime="20180523 16:07:53.697"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:07:53.697" starttime="20180523 16:07:51.426"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:07:53.697" starttime="20180523 16:07:49.110"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180523 16:07:54.054" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-9.png"&gt;&lt;img src="appium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180523 16:07:54.054" starttime="20180523 16:07:53.698"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:07:54.054" starttime="20180523 16:07:49.110"></status>
+</kw>
+<kw name="Close Facebook Application">
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" endtime="20180523 16:07:55.603" starttime="20180523 16:07:54.055"></status>
+</kw>
+<status status="PASS" endtime="20180523 16:07:55.603" starttime="20180523 16:07:54.055"></status>
+</kw>
+<tags>
+<tag>appium1</tag>
+</tags>
+<status status="PASS" endtime="20180523 16:07:55.604" critical="yes" starttime="20180523 16:07:00.978"></status>
+</test>
+<doc>A test suite with various tests.</doc>
+<status status="PASS" endtime="20180523 16:07:55.606" starttime="20180523 16:07:00.708"></status>
+</suite>
+<status status="PASS" endtime="20180523 16:07:55.608" starttime="20180523 16:06:16.835"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="3">Critical Tests</stat>
+<stat fail="0" pass="3">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">appium1</stat>
+<stat fail="0" pass="1">one</stat>
+<stat fail="0" pass="1">two</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Testcases" pass="3">Testcases</stat>
+<stat fail="0" id="s1-s1" name="Testcases-Desktop" pass="2">Testcases.Testcases-Desktop</stat>
+<stat fail="0" id="s1-s2" name="Testcases-Mobile" pass="1">Testcases.Testcases-Mobile</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
